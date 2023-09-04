@@ -1,11 +1,11 @@
 import axios from "axios";
 import HtmlTableToJson from "html-table-to-json";
-import { blogUrl } from "@/utils/blog";
+import { blogUrl } from "../../utils/blog";
 import { collection } from "firebase/firestore";
 
 export const fetchAllBlog = async () => {
     return await axios.get(`${blogUrl}/blogs`).then((res) => {
-        const jsonTables = HtmlTableToJson.parse(res.data);
+        const jsonTables = HtmlTableToJson.parse(res.data);        
         return jsonTables?.results[0].reverse()
     }).catch((e) => {
         console.log("e is", e);
@@ -22,7 +22,6 @@ export const fetchBlogBySlug = async (slug) => {
         return e
     })
 }
-
 
 export const fetchAllCollection = async () => {
     return await axios.get(`${blogUrl}/collection`).then((res) => {

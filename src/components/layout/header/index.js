@@ -5,8 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "../../components/Container";
 import { Logo } from "../../components/Logo";
 import { NavLinks } from "../../components/NavLinks";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function MenuIcon(props) {
   return (

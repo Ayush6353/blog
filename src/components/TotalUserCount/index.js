@@ -42,7 +42,7 @@ function TotalUserCount() {
             })
             console.log(arr, "ip")
 
-            arr ? '' : handleAddIp(data)
+            // arr ? '' : handleAddIp(data)
         });
         setIntial(false);
     }, [data]);

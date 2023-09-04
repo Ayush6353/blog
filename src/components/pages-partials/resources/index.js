@@ -11,11 +11,11 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
   const [data, setData] = useState(allBlogInfo);
   const [activePage, setActivePage] = useState(1);
   const [itemPerPage, setItemPerPage] = useState(9);
-  const [pageData, setPageData] = useState([]);
+  const [ pageData, setPageData] = useState([]);
   const [catData, setCatData] = useState(allBlogInfo)
   const [email, setEmail] = useState(null);
   const [allData, setAllData] = useState([]);
-  const [collection, setCollection] = useState([]);
+  const [collection, setCollection] = useState(["all","all","all","all","all","all",]);
   const [searchTitle, setSearchTitle] = useState("");
   const pageTopRef = useRef(null);
 
@@ -31,9 +31,9 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
     }
   };
 
-  useEffect(() => {
-    setCollection(allCollectionInfo)
-  }, [allCollectionInfo])
+  // useEffect(() => {
+  //   setCollection(allCollectionInfo)
+  // }, [allCollectionInfo])
 
   useEffect(() => {
     const slicedArray = (allBlogInfo || []).slice(0, itemPerPage);
@@ -56,7 +56,7 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
   }, [searchTitle]);
 
 
-  console.log("collection", collection);
+  console.log("collection", allBlogInfo, allCollectionInfo);
 
   const onChange = (e) => {
 
@@ -113,7 +113,8 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
             >
               {collection && collection.map((coll) => {
                 return (
-                  <option className="text-gray-300  bg-[#0E0125] border-none outline-none  block px-4 py-2 text-sm cursor-pointer" value={coll.collection}>{coll.collection}</option>
+                  <option className="text-black  bg-[#d6d6d600] border-none outline-none  block px-4 py-2 text-sm cursor-pointer" value={coll}>{coll}</option>
+                  // <option className="text-gray-300  bg-[#0E0125] border-none outline-none  block px-4 py-2 text-sm cursor-pointer" value={coll.collection}>{coll.collection}</option>
                 )
               })}
             </select>
@@ -127,19 +128,17 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
             </input>
           </div>
 
-
-
-
           <div>
             <div
               className={`grid gap-4 mx-auto px-4 mt-10 ${isFirefox ? "lg:gap-8" : "lg:gap-4"
                 } md:gap-6 lg:grid-cols-3 grid-cols-1 md:grid-cols-2 sm:grid-rows-9 md:grid-row-5 lg:grid-rows-auto`}
             >
-              {(pageData || [])?.map((content, i) => (
+              {/* {(pageData || [])?.map((content, i) => (
                 <Card key={i} data={content} classes={"mx-auto"} />
-              ))}
+              ))} */}
+              <Card/>
             </div>
-            {data?.length > itemPerPage && (
+            {/* {data?.length > itemPerPage && (
               <div className={""}>
                 <Pagination
                   activePage={activePage}
@@ -148,7 +147,15 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
                   itemPerPage={itemPerPage}
                 />
               </div>
-            )}
+            )} */}
+            <div className={""}>
+                <Pagination
+                  activePage=""
+                  handlePageChange=""
+                  projectList=""
+                  itemPerPage=""
+                />
+              </div>
           </div>
           <div className="fontInter mx-auto bg-white/[0.05] rounded-lg mt-14">
             <div className="lg:px-[96px] lg:py-[48px] md:px-8 md:py-5 p-2 lg:flex justify-between flex-row  ">

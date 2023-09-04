@@ -21,7 +21,7 @@
   bottom: 0;
 }
 .topRightCorner {
-  @apply md:bg-[url('/images/background/top-right.png')] bg-cover;
+  /* @apply md:bg-[url('/images/background/top-right.png')] bg-cover; */
   position: absolute;
   right: 0;
   z-index: 3;
@@ -75,7 +75,7 @@
   bottom: 0;
 }
 .topRightCornerBg {
-  @apply bg-[url('/images/background/top-right.png')] bg-cover;
+  /* @apply bg-[url('/images/background/top-right.png')] bg-cover; */
   position: absolute;
   right: 0;
   width: 708px;
