@@ -1,6 +1,7 @@
-import BlogPost from '@/components/pages-partials/blog'
+import BlogPost from '../../../components/pages-partials/blog'
 import React from 'react'
-import { fetchAllBlog, fetchBlogBySlug, fetchAllCollection } from "@/pages/api/blog";
+import { fetchAllBlog, fetchBlogBySlug, fetchAllCollection } from "../../../pages/api/blog"
+
 
 const Blog = ({ blogInfo, allBlogInfo, allCollectionInfo }) => {
   const blogData = JSON.parse(blogInfo || []);

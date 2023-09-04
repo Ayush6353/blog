@@ -1,12 +1,12 @@
-import styles from "@/components/pages-partials/contactUs/index.module.css";
-import { firebaseAddCollection } from "@/firebase/utils";
+import styles from "../../../components/pages-partials/contactUs/index.module.css";
+import { firebaseAddCollection } from "../../../firebase/utils";
 import { Formik } from "formik";
-import Link from "next/link";
 import React from "react";
 import * as Yup from "yup";
-import Input from "../../common/inputs/input";
 import SelectInput from "../../common/inputs/SelectInput";
 import SharedLayout from "../../layout/shared-layout"
+import { Link } from "react-router-dom";
+import Input from "../../../components/common/inputs/input"
 const topicDropdownOptions = ['Support', 'Technical', 'Partnerships', 'Creators']
 
 const validationSchema = Yup.object({

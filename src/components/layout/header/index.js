@@ -1,11 +1,10 @@
-
-import Head from "../../../pages/Head";
-import { Popover } from "@headlessui/react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Container } from "../../components/Container";
-import { Logo } from "../../components/Logo";
-import { NavLinks } from "../../components/NavLinks";
-import { Link, useNavigate } from "react-router-dom";
+import Head from '../../../pages/Head'
+import { Popover } from '@headlessui/react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Container } from '../../components/Container'
+import { Logo } from '../../components/Logo'
+import { NavLinks } from '../../components/NavLinks'
+import { Link, useNavigate } from 'react-router-dom'
 
 function MenuIcon(props) {
   return (
@@ -17,7 +16,7 @@ function MenuIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }
 
 function ChevronUpIcon(props) {
@@ -30,7 +29,7 @@ function ChevronUpIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }
 
 function MobileNavLink({ children, ...props }) {
@@ -42,10 +41,12 @@ function MobileNavLink({ children, ...props }) {
       {...props}
     >
       <div
-        // className={`${(props.href !== "/join" && props.href === router.pathname) ? "activeLinkRoute" : ""}`}
-      >{children}</div>
+      className={`${(props.href !== "/join" && props.href === router.pathname) ? "activeLinkRoute" : ""}`}
+      >
+        {children}
+      </div>
     </Popover.Button>
-  );
+  )
 }
 
 const Header = () => {
@@ -54,14 +55,13 @@ const Header = () => {
       <Head />
       <header className="fixed top-0 left-0 right-0 z-[9999] bg-[#0E0125] mb-20">
         <nav className="bg-white/[0.02]">
-          <Container className="relative z-50 flex justify-between items-center h-20">
+          <Container className="max-w-7xl mx-auto px-4 relative z-50 flex justify-between items-center h-20">
             <div className="relative z-10 flex items-center gap-16">
               <Link href="/" aria-label="Home">
                 <div className="cursor-pointer">
                   <Logo className="h-10" />
                 </div>
               </Link>
-
             </div>
             <div className="hidden lg:flex h-20 lg:gap-10 justify-center items-center mx-auto">
               <NavLinks />
@@ -78,7 +78,7 @@ const Header = () => {
                         open ? (
                           <ChevronUpIcon className="h-6 w-6 text-white" />
                         ) : (
-                          <MenuIcon className="h-6 w-6" stroke={"#FFFFFF"} />
+                          <MenuIcon className="h-6 w-6" stroke={'#FFFFFF'} />
                         )
                       }
                     </Popover.Button>
@@ -106,8 +106,15 @@ const Header = () => {
                             className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-[#0E0125] text-white text-center px-6 pb-6 pt-20 shadow-2xl shadow-gray-900/20"
                           >
                             <div className="space-y-4 flex flex-col mx-auto my-0">
-                              <MobileNavLink className="text-red-700" href="/Home"><span className="cursor-pointer">Home</span></MobileNavLink>
-                              <MobileNavLink href="/about"><span className="cursor-pointer">About</span></MobileNavLink>
+                              <MobileNavLink
+                                className="text-red-700"
+                                href="/Home"
+                              >
+                                <span className="cursor-pointer">Home</span>
+                              </MobileNavLink>
+                              <MobileNavLink href="/about">
+                                <span className="cursor-pointer">About</span>
+                              </MobileNavLink>
                               <MobileNavLink href="/">
                                 <span className="cursor-pointer">Blogs</span>
                               </MobileNavLink>
@@ -127,13 +134,11 @@ const Header = () => {
             >
               <Link href="/login"> Login</Link>
             </button> */}
-
             </div>
           </Container>
         </nav>
       </header>
     </>
-
-  );
-};
-export default Header;
+  )
+}
+export default Header

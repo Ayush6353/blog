@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Slider from "react-slick";
-import { ArrowLeft } from "@/components/svgs/arrowLeft";
-import { ArrowRight } from "@/components/svgs/arrowRight";
+import { ArrowLeft } from "../../../../components/svgs/arrowLeft";
+import { ArrowRight } from "../../../../components/svgs/arrowRight";
 import styles from "./card.module.css";
 import Card from "../../resources/cards/ResourceCard";
 

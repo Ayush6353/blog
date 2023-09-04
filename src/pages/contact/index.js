@@ -1,4 +1,6 @@
-import ContactUs from "@/components/pages-partials/contactUs"
+// import ContactUs from "@/components/pages-partials/contactUs"
+import ContactUs from "../../components/pages-partials/contactUs"
+
 
 const Contact = () => {
   return (

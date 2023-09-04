@@ -44,7 +44,7 @@ const SelectInput = ({ options, onChange, isFullWidth, value, classes, smallBox 
                   role="menuitem"
                   tabIndex={1}
                   id='topic'
-                  onClick={(e) => { setOpen(false), onChange(e) }}
+                  onClick={(e) => { setOpen(false); onChange(e); }}
                 >
                   {option}
                 </option>

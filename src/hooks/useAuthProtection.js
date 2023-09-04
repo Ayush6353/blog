@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
 
 const useAuthProtection = () => {
-  const router = useRouter()
+  const router = useNavigate
+  ()
   const auth = useSelector((state) => state.auth)
 
   useEffect(() => {

@@ -28,6 +28,11 @@ function TotalUserCount() {
         console.log(total, 'total')
     }
 
+    const handleAddIp = async (res) => {
+        const docRef = collection(firebaseDb, "visitor");
+        await addDoc(docRef, { ip: res.IPv4 ? res.IPv4 : res.country_name });
+    }
+
     useEffect(() => {
         if (!intial) return;
         if (!data) return;
@@ -40,17 +45,14 @@ function TotalUserCount() {
                     arr = data.IPv4
                 }
             })
-            console.log(arr, "ip")
+            console.log(arr, "ip");
 
             // arr ? '' : handleAddIp(data)
         });
         setIntial(false);
     }, [data]);
 
-    const handleAddIp = async (res) => {
-        const docRef = collection(firebaseDb, "visitor");
-        await addDoc(docRef, { ip: res.IPv4 ? res.IPv4 : res.country_name });
-    }
+    
     return (
         <>
             <div className='flex ml-auto mr-[25px] bg-[#ad0b6a] rounded-lg justify-center mt-[40px] mb-[40px]'>

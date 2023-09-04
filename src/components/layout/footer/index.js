@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <>
       <div>
-        <footer className={`container-main flex flex-col`}>
+        <footer className={`container-main max-w-7xl mx-auto px-4 flex flex-col`}>
           <div className="flex items-center lg:gap-8 gap-2 xxs:text-center flex-col lg:flex-row justify-center pt-16">
             {links.map(([label, href]) => (
               <Link
@@ -22,9 +22,9 @@ const Footer = () => {
                 className={`relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors delay-150 hover:delay-[0ms]`}
               >
                 <span
-                  // className={`relative z-10 text-white text-opacity-50 text-[17px] routeLink font-medium cursor-pointer ${
-                  //   router.pathname === href ? "activeLinkRoute" : ""
-                  // }`}
+                  className={`relative z-10 text-white text-opacity-50 text-[17px] routeLink font-medium cursor-pointer ${
+                    router.pathname === href ? "activeLinkRoute" : ""
+                  }`}
                 >
                   {label}
                 </span>

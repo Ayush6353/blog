@@ -4,18 +4,20 @@ import SharedLayout from "../../layout/shared-layout";
 import Card from "./cards/ResourceCard";
 import styles from "./index.module.css";
 import Pagination from '../../common/pagination/resourcePagination';
-import Input from '../../layout/footer/index'
+import Input from '../../common/inputs/input'
+
 
 const Resource = ({ allBlogInfo, allCollectionInfo }) => {
   const isFirefox = typeof InstallTrigger !== "undefined";
   const [data, setData] = useState(allBlogInfo);
+  console.log("🚀 ~ file: index.js:13 ~ Resource ~ data:", allBlogInfo)
   const [activePage, setActivePage] = useState(1);
   const [itemPerPage, setItemPerPage] = useState(9);
   const [ pageData, setPageData] = useState([]);
   const [catData, setCatData] = useState(allBlogInfo)
   const [email, setEmail] = useState(null);
   const [allData, setAllData] = useState([]);
-  const [collection, setCollection] = useState(["all","all","all","all","all","all",]);
+  const [collection, setCollection] = useState(["All","Ais","Game","Bots","News","Storeis","Other",]);
   const [searchTitle, setSearchTitle] = useState("");
   const pageTopRef = useRef(null);
 
@@ -41,8 +43,7 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
     setData(allBlogInfo);
     setAllData(allBlogInfo);
   }, [allBlogInfo]);
-
-
+  
   useEffect(() => {
     if (data) {
       console.log("allBlogInfo", allBlogInfo);
@@ -54,7 +55,6 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
       setPageData(result.slice(newOffset, newOffset + itemPerPage))
     }
   }, [searchTitle]);
-
 
   console.log("collection", allBlogInfo, allCollectionInfo);
 
@@ -80,6 +80,49 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
   }
 
 
+  
+  // useEffect(() => {
+  //   const slicedArray = (collection || []).slice(0, itemPerPage);
+  //   setPageData(slicedArray);
+  //   setData(collection);
+  //   setAllData(collection);
+  // }, [collection]);
+
+  // useEffect(() => {
+  //   if (data) {
+  //     console.log("collection", collection);
+  //     const result = catData.filter(val => {
+  //       return val.title.toLowerCase().match(searchTitle.toLowerCase());
+  //     });
+  //     setData(result)
+  //     const newOffset = (0) * itemPerPage;
+  //     setPageData(result.slice(newOffset, newOffset + itemPerPage))
+  //   }
+  // }, [searchTitle]);
+
+
+
+  // const onChange = (e) => {
+
+
+  //   if (e.target.value !== 'All') {
+  //     const filterData = (allData || []).filter(item => item.collection.toLowerCase().includes((e.target.value).toLowerCase()))
+  //     setData(filterData)
+  //     const newOffset = (0) * itemPerPage;
+  //     setPageData(filterData.slice(newOffset, newOffset + itemPerPage))
+  //     setCatData(filterData)
+  //     if (filterData.length === 0) {
+
+  //     }
+  //   } else {
+  //     setData(collection)
+  //     setCatData(collection)
+  //     const newOffset = (0) * itemPerPage;
+  //     console.log("collection.slice(newOffset, newOffset + itemPerPage)", collection.slice(newOffset, newOffset + itemPerPage).length);
+  //     setPageData(collection.slice(newOffset, newOffset + itemPerPage))
+  //   }
+  // }
+
 
   const search = (e) => {
     setSearchTitle(e.target.value)
@@ -96,7 +139,7 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
   return (
     <SharedLayout title="Blogs" className="mt-10">
       <div className="fontInter" ref={pageTopRef}>
-        <div className="container-main xs:px-8 px-1">
+        <div className="container-main xs:px-8 px-4 max-w-7xl mx-auto ">
           <div className={styles.headingText}>
             <h1>Blogs</h1>
           </div>
@@ -108,13 +151,12 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
             <select
               id="message-type"
               name="message-type"
-              className=" right-0 z-10 mt-1 md:w-[300px] sm:w-[60%] w-full origin-top-right bg-transparent rounded-md  shadow-lg ring-1 focus:ring-gray-900 ring-gray-600 text-gray-300  focus:border-gray-300 outline-none focus:outline-none"
+              className="right-0 z-10 mt-1 pl-2 sm:mt-0 mt-5 md:w-[300px] sm:w-[60%] py-2 w-full origin-top-right bg-transparent rounded-md  shadow-lg ring-1 focus:ring-gray-900 ring-gray-600 text-gray-300  focus:border-gray-300 outline-none focus:outline-none"
               onChange={(e) => { onChange(e) }}
             >
               {collection && collection.map((coll) => {
                 return (
-                  <option className="text-black  bg-[#d6d6d600] border-none outline-none  block px-4 py-2 text-sm cursor-pointer" value={coll}>{coll}</option>
-                  // <option className="text-gray-300  bg-[#0E0125] border-none outline-none  block px-4 py-2 text-sm cursor-pointer" value={coll.collection}>{coll.collection}</option>
+                  <option className="text-gray-300  bg-[#0E0125] border-none outline-none  block px-4 py-2 text-sm cursor-pointer" value={coll}>{coll}</option>
                 )
               })}
             </select>

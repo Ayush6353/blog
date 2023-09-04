@@ -1,7 +1,9 @@
 import axios from "axios";
 import HtmlTableToJson from "html-table-to-json";
 import { blogUrl } from "../../utils/blog";
-import { collection } from "firebase/firestore";
+// import { collection } from "firebase/firestore";
+
+
 
 export const fetchAllBlog = async () => {
     return await axios.get(`${blogUrl}/blogs`).then((res) => {
@@ -32,6 +34,6 @@ export const fetchAllCollection = async () => {
         return secondElement
     }).catch((e) => {
         console.log("e is", e);
-        return e
+        return e    
     })
 }
