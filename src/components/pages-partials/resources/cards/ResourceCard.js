@@ -23,7 +23,7 @@ const Card = ({ data }) => {
       "https://www.jeffbullas.com/wp-content/uploads/2023/04/AI-portrait-generator.jpg",
       "https://c02.purpledshub.com/uploads/sites/41/2023/02/Midjourney-L-2068f65.jpg",
     ])
-  })
+  },[])
 
   return (
     <>

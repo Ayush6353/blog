@@ -7,6 +7,7 @@ import { blogUrl } from "../../utils/blog";
 
 export const fetchAllBlog = async () => {
     return await axios.get(`${blogUrl}/blogs`).then((res) => {
+        console.log(res,"///////////////////////////////////")
         const jsonTables = HtmlTableToJson.parse(res.data);        
         return jsonTables?.results[0].reverse()
     }).catch((e) => {

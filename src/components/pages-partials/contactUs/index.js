@@ -58,7 +58,7 @@ function Contactus() {
                 <div className="mt-4">
                   <label className={styles.label}>Name</label>
                   <Input
-                    classes="rounded-xl mt-1.5"
+                    classes="pl-2 mt-1.5 h-10	rounded"
                     type="text"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -72,7 +72,7 @@ function Contactus() {
                 <div className="mt-4">
                   <label className={styles.label}>Email</label>
                   <Input
-                    classes="rounded-xl mt-1.5"
+                    classes="pl-2 mt-1.5 h-10	rounded"
                     onChange={handleChange}
                     type='text'
                     onBlur={handleBlur}
@@ -82,11 +82,11 @@ function Contactus() {
                   />
                 </div>
                 {errors.Email && touched.Email &&
-                  <p className="text-red-500 text-sm">{errors.Email}</p>}
+                  <p className="text-red-500 text-sm  h-10 rounded">{errors.Email}</p>}
                 <div className="mt-4">
                   <label className={styles.label}>Topic</label>
                   <SelectInput
-                    classes='mt-1.5'
+                    classes='mt-1.5  h-10	rounded'
                     isFullWidth={true}
                     name="Topic"
                     // id="topic"
@@ -100,7 +100,7 @@ function Contactus() {
                 <div className="mt-4 flex flex-col">
                   <label className={styles.label}>Subject</label>
                   <Input
-                    classes="rounded-xl mt-1.5"
+                    classes="pl-2 mt-1.5  h-10	rounded"
                     type="text"
                     onBlur={handleBlur}
                     onChange={handleChange}
