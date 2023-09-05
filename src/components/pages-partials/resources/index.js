@@ -175,12 +175,12 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
               className={`grid gap-4 mx-auto px-4 mt-10 ${isFirefox ? "lg:gap-8" : "lg:gap-4"
                 } md:gap-6 lg:grid-cols-3 grid-cols-1 md:grid-cols-2 sm:grid-rows-9 md:grid-row-5 lg:grid-rows-auto`}
             >
-              {(pageData || [])?.map((content, i) => (
+              {/* {(pageData || [])?.map((content, i) => (
                 <Card key={i} data={content} classes={"mx-auto"} />
-              ))}
+              ))} */}
               {/* <Card/> */}
             </div>
-            {/* {data?.length > itemPerPage && (
+            {data?.length > itemPerPage && (
               <div className={""}>
                 <Pagination
                   activePage={activePage}
@@ -189,7 +189,7 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
                   itemPerPage={itemPerPage}
                 />
               </div>
-            )} */}
+            )}
             <div className={""}>
                 <Pagination
                   activePage=""
