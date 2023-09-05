@@ -15,8 +15,8 @@ function App(allBlogInfo, allCollectionInfo) {
   return (
     <>
       <BrowserRouter>
-      <Api/>
-        {/* <Resource
+      {/* <Api/>
+        <Resource
           // allBlogInfo={allBlogData}
           // allCollectionInfo={allCollectionData}
         /> */}
@@ -34,16 +34,16 @@ function App(allBlogInfo, allCollectionInfo) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const blogResponse = await fetchAllBlog()
-  console.log(blogResponse,"blogResponse===>")
-  const collectionResponse = await fetchAllCollection()
-  return {
-    props: {
-      allBlogInfo: JSON.stringify(blogResponse),
-      allCollectionInfo: JSON.stringify(collectionResponse),
-    },
-  }
-}
+// export async function getServerSideProps(context) {
+//   const blogResponse = await fetchAllBlog()
+//   console.log(blogResponse,"blogResponse===>")
+//   const collectionResponse = await fetchAllCollection()
+//   return {
+//     props: {
+//       allBlogInfo: JSON.stringify(blogResponse),
+//       allCollectionInfo: JSON.stringify(collectionResponse),
+//     },
+//   }
+// }
 
 export default App

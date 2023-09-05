@@ -16,6 +16,7 @@ const mainSettings = {
 };
 
 function NextArrow({ currentSlide, slideCount, cardsToShow, ...props }) {
+  
   return (
     <button
       {...props}
@@ -23,7 +24,7 @@ function NextArrow({ currentSlide, slideCount, cardsToShow, ...props }) {
       aria-hidden="true"
       aria-disabled={currentSlide === slideCount - cardsToShow ? true : false}
       type="button"
-    >
+    >{console.log('currentSlide :>> ', currentSlide)}
       <ArrowRight width={14} height={14} />
     </button>
   );

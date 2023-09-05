@@ -25,7 +25,7 @@ function TotalUserCount() {
         const snapShot = await getCountFromServer(docRef)
         const total = snapShot.data().count;
         setTotalCount(total)
-        console.log(total, 'total')
+       
     }
 
     const handleAddIp = async (res) => {

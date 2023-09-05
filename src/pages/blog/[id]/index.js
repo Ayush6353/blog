@@ -4,6 +4,7 @@ import { fetchAllBlog, fetchBlogBySlug, fetchAllCollection } from "../../../page
 
 
 const Blog = ({ blogInfo, allBlogInfo, allCollectionInfo }) => {
+  console.log('allCollectionInfo :>> ', allCollectionInfo);
   const blogData = JSON.parse(blogInfo || []);
   const allBlogData = JSON.parse(allBlogInfo || []);
   const allCollectionData = JSON.parse(allCollectionInfo || []);

@@ -137,7 +137,7 @@ const BlogPost = ({ blogInfo, allBlogInfo }) => {
             <img
               src={`${
                 data?.coverImage
-                  ? data.coverImage.slice(0, 5) == 'https'
+                  ? data.coverImage.slice(0, 5) === 'https'
                     ? data?.coverImage
                     : `${blogUrl}/`.concat(data?.coverImage)
                   : 'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Ferikkain%2Ffiles%2F2018%2F01%2FRey-Luke.jpg'
