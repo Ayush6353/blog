@@ -136,7 +136,7 @@ function Contactus() {
                   />
                   <label className={styles.label}>
                     You agree to us processing your data in line with our
-                    <Link target='_blank' href="/privacy" className={styles.mylink}>
+                    <Link target='_blank' to="/privacy" className={styles.mylink}>
                       Privacy Policy
                     </Link>
                   </label>

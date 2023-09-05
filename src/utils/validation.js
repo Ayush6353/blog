@@ -6,6 +6,7 @@ const postValidation = (postType, input, file) => {
   if (input.tags.length === 0) {
     error.error = "Please add at least one tag."
   }
+  // eslint-disable-next-line no-unused-expressions
   if (postType === 'subscribers' && !input.tierAccess) [
     error.error = "Please choose tier access."
   ]

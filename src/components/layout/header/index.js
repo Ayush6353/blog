@@ -57,7 +57,7 @@ const Header = () => {
         <nav className="bg-white/[0.02]">
           <Container className="max-w-7xl mx-auto px-4 relative z-50 flex justify-between items-center h-20">
             <div className="relative z-10 flex items-center gap-16">
-              <Link href="/" aria-label="Home">
+              <Link to="/" aria-label="Home">
                 <div className="cursor-pointer">
                   <Logo className="h-10" />
                 </div>

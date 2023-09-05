@@ -1,3 +1,4 @@
+
 // import Input from '@/components/common/inputs/input'
 import PopoverButton from '../../../components/common/popover'
 import FacebookIcon from '../../../components/svgs/facebook'
@@ -19,7 +20,7 @@ import markdownToHtml from './markdownToHtml'
 import './index.module.css'
 import { blogUrl } from '../../../utils/blog'
 import { toast } from 'react-hot-toast'
-// import { NextSeo } from 'next-seo'
+import { NextSeo } from 'next-seo'
 import { useNavigate } from 'react-router'
 import { Helmet } from 'react-helmet'
 // import TotalUserCount from '@/components/TotalUserCount'
@@ -114,7 +115,7 @@ const BlogPost = ({ blogInfo, allBlogInfo }) => {
 
   return (
     <>
-      {/* <NextSeo {...SEO} /> */}
+      <NextSeo {...SEO} />
       <Helmet>
         <title>My Page Title</title>
         <meta name="description" content="My page description" />
@@ -176,7 +177,7 @@ const BlogPost = ({ blogInfo, allBlogInfo }) => {
                 <h2 className="text-4xl font-semibold text-white">Blogs</h2>
                 <button
                   className="lg:block hidden py-3 px-5 bg-[#6938EF] text-white rounded-xl text-base font-medium"
-                  onClick={() => router.push('/')}
+                  onClick={() => router('/')}
                 >
                   View all
                 </button>
@@ -185,11 +186,11 @@ const BlogPost = ({ blogInfo, allBlogInfo }) => {
                 Articles, tips, guides, industry best practices, and news.
               </p>
             </div>
-            {/* <div className='lg:ml-36 lg:relative'>
+            <div className='lg:ml-36 lg:relative'>
             <div className="3xlg:absolute overflow-hidden pb-24 z-100 lg:pb-32 lg:pt-9 3xlg:max-w-[1364px] ">
               <ProductsCarousel blogData={blogData} />
             </div>
-          </div> */}
+          </div>
           </>
           <div className="lg:px-24 lg:py-12 lg:my-24 grid grid-cols-11 lg:mx-28 p-4 bg-white/[0.05] rounded-2xl">
             <div className="col-span-12 lg:col-span-7">

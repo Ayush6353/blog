@@ -80,50 +80,6 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
   }
 
 
-  
-  // useEffect(() => {
-  //   const slicedArray = (collection || []).slice(0, itemPerPage);
-  //   setPageData(slicedArray);
-  //   setData(collection);
-  //   setAllData(collection);
-  // }, [collection]);
-
-  // useEffect(() => {
-  //   if (data) {
-  //     console.log("collection", collection);
-  //     const result = catData.filter(val => {
-  //       return val.title.toLowerCase().match(searchTitle.toLowerCase());
-  //     });
-  //     setData(result)
-  //     const newOffset = (0) * itemPerPage;
-  //     setPageData(result.slice(newOffset, newOffset + itemPerPage))
-  //   }
-  // }, [searchTitle]);
-
-
-
-  // const onChange = (e) => {
-
-
-  //   if (e.target.value !== 'All') {
-  //     const filterData = (allData || []).filter(item => item.collection.toLowerCase().includes((e.target.value).toLowerCase()))
-  //     setData(filterData)
-  //     const newOffset = (0) * itemPerPage;
-  //     setPageData(filterData.slice(newOffset, newOffset + itemPerPage))
-  //     setCatData(filterData)
-  //     if (filterData.length === 0) {
-
-  //     }
-  //   } else {
-  //     setData(collection)
-  //     setCatData(collection)
-  //     const newOffset = (0) * itemPerPage;
-  //     console.log("collection.slice(newOffset, newOffset + itemPerPage)", collection.slice(newOffset, newOffset + itemPerPage).length);
-  //     setPageData(collection.slice(newOffset, newOffset + itemPerPage))
-  //   }
-  // }
-
-
   const search = (e) => {
     setSearchTitle(e.target.value)
   }
@@ -155,6 +111,7 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
               onChange={(e) => { onChange(e) }}
             >
               {collection && collection.map((coll) => {
+                console.log('coll :>> ', coll);
                 return (
                   <option className="text-gray-300  bg-[#0E0125] border-none outline-none  block px-4 py-2 text-sm cursor-pointer" value={coll}>{coll}</option>
                 )
@@ -178,7 +135,7 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
               {/* {(pageData || [])?.map((content, i) => (
                 <Card key={i} data={content} classes={"mx-auto"} />
               ))} */}
-              {/* <Card/> */}
+              <Card/>
             </div>
             {data?.length > itemPerPage && (
               <div className={""}>
@@ -190,14 +147,14 @@ const Resource = ({ allBlogInfo, allCollectionInfo }) => {
                 />
               </div>
             )}
-            <div className={""}>
+            {/* <div className={""}>
                 <Pagination
                   activePage=""
                   handlePageChange=""
                   projectList=""
                   itemPerPage=""
                 />
-              </div>
+              </div> */}
           </div>
           <div className="fontInter mx-auto bg-white/[0.05] rounded-lg mt-14">
             <div className="lg:px-[96px] lg:py-[48px] md:px-8 md:py-5 p-2 lg:flex justify-between flex-row  ">

@@ -1,4 +1,4 @@
-import TermsService from '@/components/pages-partials/terms&service'
+import TermsService from '../../components/pages-partials/terms&service/index'
 import React from 'react'
 
 const Terms = () => {

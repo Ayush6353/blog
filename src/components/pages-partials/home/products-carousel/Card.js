@@ -16,6 +16,7 @@ const ProductsCarouselCard = ({ data, mr }) => {
             <img
               src={data?.post?.img}
               className="rounded-lg w-[384px] h-[280px]"
+              alt="dataPost"
             />
             <div className="absolute bottom-0 backdrop-blur-md backdrop-invert bg-white/30 w-[384px] rounded-b-lg">
               <div className="flex justify-between w-[384px] h-[88px] items-center">
