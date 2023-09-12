@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
-import Link from 'next/link'
 import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 
 const baseStyles = {
   solid:
@@ -32,7 +32,7 @@ export const Button = forwardRef(function Button(
   )
 
   return href ? (
-    <Link ref={ref} href={href} className={className} {...props} />
+    <Link ref={ref} to={href} className={className} {...props} />
   ) : (
     <button ref={ref} className={className} {...props} />
   )

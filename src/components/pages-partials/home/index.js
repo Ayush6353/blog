@@ -58,7 +58,7 @@ const HomeUi = ({ allBlogInfo }) => {
                   This is a place where I share my thoughts and ideas about
                   various topics.
                 </h3>
-                <Link href="/">
+                <Link to="/">
                   <button className="bg-pink-500 text-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800 transition-all">
                     {' '}
                     Check out my latest posts
@@ -222,7 +222,7 @@ const HomeUi = ({ allBlogInfo }) => {
                     Hi, my name is Jane and I'm a blogger who loves to write
                     about technology and culture. I hope you enjoy my blog!
                   </h3>
-                  <Link href={'/contact'}>
+                  <Link to='/contact'>
                     <button className="bg-white font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider hover:border-red hover:text-white hover:bg-[#0a0536]">
                       Contact us
                     </button>

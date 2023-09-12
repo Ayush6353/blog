@@ -1,9 +1,9 @@
 import { Container } from '@/components/components/Container'
-import Link from 'next/link'
 import React from 'react'
 import SharedLayout from '../../layout/shared-layout'
 import FaqHeader from './header'
 import QuestionsSidebar from './sidebar'
+import { Link } from 'react-router-dom'
 
 const FaqLayout = ({ children }) => {
   
@@ -30,7 +30,7 @@ const FaqLayout = ({ children }) => {
         </div>
         <div className='flex flex-row items-center col-span-12'>
           <Link
-            href="/contact">
+            to="/contact">
             <button
               className="bg-[#6938EF] rounded-xl mx-auto py-4 px-7 flex items-center justify-center font-bold text-lg text-white"
             >
